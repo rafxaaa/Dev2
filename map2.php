@@ -222,7 +222,7 @@
     <nav class="nav-links">
       <!-- Adjust these to match exactly what you use in home.php -->
       <a href="home.php">Home</a>
-      <a href="map.php" class="active">Crime Map</a>
+      <a href="map2.php" class="active">Crime Map</a>
       <a href="about.php">About</a>
     </nav>
   </div>
