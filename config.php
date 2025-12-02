@@ -1,10 +1,9 @@
 <?php
 // Database configuration
-// Update these with your actual database credentials
 $db_host = 'localhost';
-$db_user = 'your_db_user';
-$db_pass = 'your_db_password';
-$db_name = 'your_db_name';
+$db_user = 'rafaelv8';
+$db_pass = 'AcadDev_Villasenor_5969647854';
+$db_name = 'rafaelv8_crime';
 
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
