@@ -109,12 +109,23 @@
 <body>
 
   <!-- NAV (same CSS as home, About active) -->
+  <?php require 'config.php'; ?>
   <header class="nav">
     <div class="brand">SAFEROUTE</div>
     <nav class="nav-links">
       <a href="home.php">Home</a>
       <a href="map2.php">Map</a>
       <a href="about.php">About</a>
+      <a href="resources.php">Resources</a>
+      <?php if (isLoggedIn()): ?>
+        <?php if (isAdmin()): ?>
+          <a href="admin.php">Admin</a>
+        <?php endif; ?>
+        <a href="logout.php">Logout</a>
+      <?php else: ?>
+        <a href="login.php">Log in</a>
+        <a href="signup.php">Sign up</a>
+      <?php endif; ?>
     </nav>
   </header>
 

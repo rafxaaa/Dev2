@@ -213,6 +213,7 @@
 <body>
 
 <!-- Top nav: mirror home.php here -->
+<?php require 'config.php'; ?>
 <header class="top-nav">
   <div class="top-nav-inner">
     <div class="brand">
@@ -224,6 +225,16 @@
       <a href="home.php">Home</a>
       <a href="map2.php" class="active">Crime Map</a>
       <a href="about.php">About</a>
+      <a href="resources.php">Resources</a>
+      <?php if (isLoggedIn()): ?>
+        <?php if (isAdmin()): ?>
+          <a href="admin.php">Admin</a>
+        <?php endif; ?>
+        <a href="logout.php">Logout</a>
+      <?php else: ?>
+        <a href="login.php">Log in</a>
+        <a href="signup.php">Sign up</a>
+      <?php endif; ?>
     </nav>
   </div>
 </header>

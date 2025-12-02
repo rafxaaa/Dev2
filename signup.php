@@ -2,6 +2,12 @@
 session_start();
 require 'config.php';
 
+// Redirect if already logged in
+if (isLoggedIn()) {
+    header('Location: home.php');
+    exit();
+}
+
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -31,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$errors) {
         $hash  = password_hash($pass1, PASSWORD_DEFAULT);
-        $level = 1; // regular user
+        $level = 0; // regular user (0 = user, 1 = admin)
 
         $stmt = $mysqli->prepare("
             INSERT INTO users (full_name, email, password_hash, security_level)

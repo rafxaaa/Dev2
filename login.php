@@ -2,6 +2,12 @@
 session_start();
 require 'config.php';
 
+// Redirect if already logged in
+if (isLoggedIn()) {
+    header('Location: home.php');
+    exit();
+}
+
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
